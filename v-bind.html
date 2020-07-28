@@ -2,18 +2,44 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <style type="text/css">
+            button {
+                background: white;
+                border: 1px solid gray;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+            
+            button.active {  
+                background-color: blue;
+                color: yellow;
+                border-color: blue;
+            }
+
+            img {
+                width: 300px;
+                border: 3px solid blue;
+            }            
+        </style>
     </head>
-    <body>
-        <div id="app">
-            <button v-for="p in pages">{{ p }}</button>
+    <body>                          
+        <div id="app">           <!--ex: 2번째 버튼을 누르면 해당 pages[1]가 page에 들어가고, page와 pages[1] 이 같으면 2번째 버튼에 active 속성을 주어라-->
+            <button v-for="p in pages" v-bind:class="{ 'active' : page === p }" v-on:click="page = p">{{ p }}</button> <!--클릭하면 p를 page에 넣어준다 (page = p)-->
+            <hr/>
+            <!--v-if="page === p" : data: > page: ''과 맞을때만--> 
+            <div v-for="p in pages" v-if="page === p"> 
+                <p>{{ p }} contents</p>
+                <img v-bind:src="p + '.png'"/>
+            </div>
         </div>
         <script src="vue.js"></script>
         <script>
-            // v-bind
+            // v-bind: 동적으로 엘리먼트의 속성을 변경해야할 때 사용 -> v-bind: 대신에 :로만 사용가능하다.
             var app = new Vue({
                 el: '#app',
                 data: {
-                     pages: ['page1','page2','page3','page4']                  
+                    page: 'page1', //초기값이 page1이기 때문에 첫번째 버튼이 active가 적용되어 있다.
+                    pages: ['page1','page2','page3','page4']                  
                 }
             });                       
         </script>
