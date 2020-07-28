@@ -7,10 +7,18 @@
         <!--컴포넌트(component): (구성) 요소, 부품-->
         <!--코드의 캡슐화를 도와주고, 재활용을 할 수 있게 해줌-->
         <div id="app">
-            <!--코드가 캡슐화 되었다. == 여러개를 재활용할 수 있다.-->
-            <num-btn></num-btn>
-            <num-btn></num-btn>
-            <num-btn></num-btn>
+            <!--코드가 캡슐화 되었다. == <num-btn> 여러개를 재활용할 수 있다.-->
+            <!-- 프로퍼티(property) : 속성-->
+            <num-btn number="1"></num-btn>
+            <num-btn number="2"></num-btn>
+            <num-btn number="3"></num-btn>
+            <hr/>
+            <!--target="_blank" == 새창에서 열기-->
+            <a href="http://www.naver.com/" target="_blank">naver</a>
+            <hr/>
+            <!-- camel case (x) ex: openNew // dash case (o) ex: open-new -->
+            <!-- open-new="false"로해도 새창이켜짐 그이유는 boolean형 false가아니라 문자열 'false'가 app.js로 넘어가기때문이다 따라서 app.js참고-->
+            <anchor text="naver" href="http://www.naver.com/" open-new="true"></anchor> <!--open-new="true" 는 새창으로 연다는 듯-->
         </div>
         <script src="vue.js"></script>
         <script src="app.js"></script>
