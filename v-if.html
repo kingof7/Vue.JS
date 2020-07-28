@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-if="visible">나는 보입니다.</h1>
+            <button v-on:click="visible = !visible">버튼</button> <!--클릭하면 not 연산자를 통해 visible이 false가 됨-->
+            <hr/>
+
+            <button v-on:click="alert('버튼을 클릭했습니다.')">버튼</button>
+            <hr/>
+            <button v-on:dblclick="alert('더블클릭을 실행했습니다.')">더블클릭</button>
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            // v-on : 사용자가 액션(클릭 등)을 했을 때 기능을 실행함
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    visible: true
+                }                                
+            });                       
+        </script>
+    </body>
+</html>

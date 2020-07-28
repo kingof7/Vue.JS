@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div id="app">
+            <button v-for="p in pages">{{ p }}</button>
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            // v-bind
+            var app = new Vue({
+                el: '#app',
+                data: {
+                     pages: ['page1','page2','page3','page4']                  
+                }
+            });                       
+        </script>
+    </body>
+</html>

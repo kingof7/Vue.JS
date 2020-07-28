@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div id="app">
+            <div>{{message}}</div>
+            <input type="text" v-model="message"/>
+        </div> <!--단방향 data binding-->
+        <script src="vue.js"></script>
+        <script>
+            var firstApp = new Vue({
+                el: '#app',
+                data: { //객체형태
+                    message: '첫 번째 vue.js 앱!' //input태그를 통해 html에 있는 내용을 firstApp에 적용(양방향 바인딩)
+                }
+            });
+                       
+        </script>
+    </body>
+</html>
